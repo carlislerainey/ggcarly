@@ -39,6 +39,7 @@ theme_carly_presents <- function (base_size = 16, base_family = "", base_line_si
           axis.line = element_blank(),
           axis.ticks = element_line(color = "grey20", size = 0.5),
           panel.grid = element_blank(),
-          strip.background = element_blank())
+          strip.background = element_blank(),
+          strip.text = element_text(size = base_size, margin = margin(b = 2)))
 }
 

@@ -40,7 +40,7 @@ ggplot(mtcars, aes(wt, mpg, size = hp)) +
 library(ggplot2)
 library(ggcarly)
 
-# scatterplot
+# barplot
 ggplot(mpg, aes(class)) + 
   geom_bar() + 
   coord_flip() + 
@@ -48,3 +48,19 @@ ggplot(mpg, aes(class)) +
 ```
 
 ![](figs/bar-plot-1.png)<!-- -->
+
+## Facetted Scatterplot
+
+``` r
+# load packages
+library(ggplot2)
+library(ggcarly)
+
+# facetted scatterplot
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + 
+  facet_wrap(vars(class)) + 
+  theme_carly_presents()
+```
+
+![](figs/facetted-scatterplot-1.png)<!-- -->
