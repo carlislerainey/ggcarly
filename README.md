@@ -15,6 +15,46 @@ presentations.
 
 # Examples
 
+## Latent Dissent
+
+``` r
+# load packages
+library(tidyverse)
+library(ggcarly)
+
+# load latent dissent data
+dissent_df <- read_csv("https://raw.githubusercontent.com/carlislerainey/latent-dissent/master/latent-dissent.csv") %>% 
+  glimpse()
+```
+
+    ## Observations: 2,220
+    ## Variables: 9
+    ## $ country_name        <chr> "United States", "United States", "United ...
+    ## $ ccode               <int> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, ...
+    ## $ stateabb            <chr> "USA", "USA", "USA", "USA", "USA", "USA", ...
+    ## $ year                <dbl> 1990, 1991, 1992, 1993, 1994, 1995, 1996, ...
+    ## $ n_dissent_events    <int> 118, 109, 124, 138, 127, 117, 123, 130, 14...
+    ## $ frac_dissent_events <dbl> 0.0008706110, 0.0007745053, 0.0008202143, ...
+    ## $ pi                  <dbl> 0.0008594584, 0.0008084815, 0.0008504707, ...
+    ## $ eta                 <dbl> -7.063373, -7.123618, -7.073412, -7.175113...
+    ## $ se_eta              <dbl> 0.10025341, 0.09037413, 0.09554201, 0.0919...
+
+``` r
+# plot eta
+p <- ggplot(dissent_df, aes(x = year, y = eta, group = ccode)) + 
+  geom_line(alpha = 0.2) + 
+  theme_carly_presents()
+p + geom_line(data = filter(dissent_df, country_name %in% c("United States", "Canada", "Mexico", "Russia")),
+              aes(x = year, y = eta, color = country_name), alpha = 1, size = 2) + 
+  scale_color_brewer(type = "qual", palette = 2) + 
+  labs(title = "A Latent Measure of Dissent",
+       x = "Year",
+       y = "Dissent",
+       color = "Country")
+```
+
+![](figs/latent-dissent-1.png)<!-- -->
+
 ## Scatterplot
 
 ``` r
