@@ -119,3 +119,34 @@ ggplot(mtcars, aes(x = mpg)) +
 ```
 
 ![](figs/histogram-1.png)<!-- -->
+
+## Dot-and-Box Plot
+
+Example from
+[here](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#Dot%20+%20Box%20Plot).
+
+``` r
+# load packages
+library(ggplot2)
+library(ggcarly)
+
+# dot-and-box plot
+g <- ggplot(mpg, aes(manufacturer, cty))
+g + geom_boxplot() + 
+  geom_dotplot(binaxis='y', 
+               stackdir='center', 
+               dotsize = .5, 
+               fill="red") +
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title="Box plot + Dot plot", 
+       subtitle="City Mileage vs Class: Each dot represents 1 row in source data",
+       caption="Source: mpg",
+       x="Class of Vehicle",
+       y="City Mileage") + 
+  theme_carly_presents() + 
+  theme(axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](figs/dot-and-box-plot-1.png)<!-- -->
