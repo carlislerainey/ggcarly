@@ -64,3 +64,18 @@ ggplot(mpg, aes(displ, hwy)) +
 ```
 
 ![](figs/facetted-scatterplot-1.png)<!-- -->
+
+## Histogram
+
+``` r
+# load packages
+library(ggplot2)
+library(ggcarly)
+
+# dotplot
+ggplot(mtcars, aes(x = mpg)) + 
+  geom_histogram(bins = 10) + 
+  theme_carly_presents()
+```
+
+![](figs/histogram-1.png)<!-- -->

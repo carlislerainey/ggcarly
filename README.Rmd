@@ -64,3 +64,16 @@ ggplot(mpg, aes(displ, hwy)) +
   facet_wrap(vars(class)) + 
   theme_carly_presents()
 ```
+
+## Histogram
+
+```{r histogram, fig.height=3, fig.path="figs/", fig.width=4}
+# load packages
+library(ggplot2)
+library(ggcarly)
+
+# dotplot
+ggplot(mtcars, aes(x = mpg)) + 
+  geom_histogram(bins = 10) + 
+  theme_carly_presents()
+```
