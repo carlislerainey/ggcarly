@@ -32,3 +32,19 @@ ggplot(mtcars, aes(wt, mpg, size = hp)) +
 ```
 
 ![](figs/scatterplot-1.png)<!-- -->
+
+## Bar Plot
+
+``` r
+# load packages
+library(ggplot2)
+library(ggcarly)
+
+# scatterplot
+ggplot(mpg, aes(class)) + 
+  geom_bar() + 
+  coord_flip() + 
+  theme_carly_presents()
+```
+
+![](figs/bar-plot-1.png)<!-- -->

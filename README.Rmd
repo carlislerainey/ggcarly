@@ -36,3 +36,17 @@ ggplot(mtcars, aes(wt, mpg, size = hp)) +
        size = "Gross Horsepower") + 
   theme_carly_presents()
 ```
+
+## Bar Plot
+
+```{r bar-plot, fig.height=3.5, fig.path="figs/", fig.width=6}
+# load packages
+library(ggplot2)
+library(ggcarly)
+
+# scatterplot
+ggplot(mpg, aes(class)) + 
+  geom_bar() + 
+  coord_flip() + 
+  theme_carly_presents()
+```

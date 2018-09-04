@@ -30,14 +30,15 @@ theme_carly_presents <- function (base_size = 16, base_family = "", base_line_si
    theme_bw(base_size = base_size, base_family = base_family,
              base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace%
     theme(title = element_text(color = "grey20"),
-          plot.title = element_text(hjust = 0.5, size = base_size*1.2, margin = margin(b = 10)),
-          plot.subtitle = element_text(hjust = 0.5, size = base_size*0.9, margin = margin(t = -5, b = 10)),
+          plot.title = element_text(hjust = 0.5, size = base_size*1.2, margin = margin(b = 10), face = "bold"),
+          plot.subtitle = element_text(hjust = 0.5, size = base_size*0.9, margin = margin(t = -5, b = 10), face = "bold"),
           axis.title = element_text(color = "grey20"),
           axis.text = element_text(color = "grey20"),
-          axis.title.x = element_text(hjust = 0.95),
-          axis.title.y = element_text(vjust = 0.95),
+          axis.title.x = element_text(hjust = 0.95, face = "bold"),
+          axis.title.y = element_text(vjust = 0.95, face = "bold"),
           axis.line = element_blank(),
           axis.ticks = element_line(color = "grey20", size = 0.5),
           panel.grid = element_blank(),
           strip.background = element_blank())
 }
+
