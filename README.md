@@ -43,17 +43,40 @@ dissent_df <- read_csv("https://raw.githubusercontent.com/carlislerainey/latent-
 # plot eta
 p <- ggplot(dissent_df, aes(x = year, y = eta, group = ccode)) + 
   geom_line(alpha = 0.2) + 
-  theme_carly_presents()
-p + geom_line(data = filter(dissent_df, country_name %in% c("United States", "Canada", "Mexico", "Russia")),
+  geom_line(data = filter(dissent_df, country_name %in% c("United States", "Canada", "Mexico", "Russia")),
               aes(x = year, y = eta, color = country_name), alpha = 1, size = 2) + 
   scale_color_brewer(type = "qual", palette = 2) + 
   labs(title = "A Latent Measure of Dissent",
        x = "Year",
        y = "Dissent",
        color = "Country")
+
+# default theme
+p
 ```
 
 ![](figs/latent-dissent-1.png)<!-- -->
+
+``` r
+# bw theme
+p + theme_bw()
+```
+
+![](figs/latent-dissent-2.png)<!-- -->
+
+``` r
+# minimal theme
+p + theme_minimal()
+```
+
+![](figs/latent-dissent-3.png)<!-- -->
+
+``` r
+# carly_presents
+p + theme_carly_presents()
+```
+
+![](figs/latent-dissent-4.png)<!-- -->
 
 ## Scatterplot
 
