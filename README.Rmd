@@ -9,9 +9,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Overview
 
-This R package contains functions that I use often to create plots. 
+For the future, I intend for this package to contain functions that I use to create plots.
 
-At the moment, there's just `theme_carly_presents()`, which simplifies `ggplot2::theme_bw()` a bit for a low-resolution format like presentations. 
+At the moment, there's just `theme_carly_presents()`, which simplifies `ggplot2::theme_bw()` a bit for a low-resolution format like presentations. I'mm just testing it as a proof of concept. You can see [an example](https://speakerdeck.com/carlislerainey/ggcarly-theme-carly-presents) I put on SpeakerDeck. I also added several examples below.
 
 # Installation
 
