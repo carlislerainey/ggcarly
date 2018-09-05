@@ -1,0 +1,54 @@
+---
+title: "`ggcarly:theme_carly_presents()`"
+output:
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## a theorem
+
+**Carlisle's Fundamental Theorem of Slide Design**: Bigger is better until things start to overlap.
+
+
+## the theory
+
+In general, details are hard to see in low-resolution formats like conference presentations. Imagine squinting, from the back of an unevenly lit room, at a slide projected by an an old, buzzing projector onto a tiny screen. 
+
+Where we have room to make things bigger, we should.
+
+We usually have extra room along the axes to make axis and tick labels easy-to-read. There's a big ROI in having readable axis labels. This isn't important in the print format because it's easy (perhaps easier) to read small text.
+
+There's not necessarily more room inside the plot for larger points, text, lines, etc. 
+
+**Implication**: For a low-resolution presentation format, it makes sense to use bigger, bolder axis labels than in a print format (holding the size of the text/lines/points in the plotting region constant). 
+
+## classic theme; default size
+
+```{r}
+library(ggplot2)
+library(ggrepel)
+library(ggcarly)
+p <- ggplot(mtcars,
+  aes(wt, mpg, label = rownames(mtcars), colour = factor(cyl))) +
+  geom_point() + 
+  geom_text_repel() + 
+  labs(x = "Weight (in 1000s of lbs.)",
+       y = "MPG",
+       color = "Cylinders")
+p
+```
+
+## classic theme (manually resized in chuck options)
+
+```{r, fig.height=5, fig.width=7}
+p 
+```
+
+## carly_presents theme (manually resized in chuck options)
+
+```{r, fig.height=5, fig.width=7}
+p + theme_carly_presents()
+```
