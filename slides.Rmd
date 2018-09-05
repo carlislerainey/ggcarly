@@ -41,13 +41,13 @@ p <- ggplot(mtcars,
 p
 ```
 
-## classic theme (manually resized in chuck options)
+## classic theme (manually resized in chunk options)
 
 ```{r, fig.height=5, fig.width=7}
 p 
 ```
 
-## carly_presents theme (manually resized in chuck options)
+## carly_presents theme (manually resized in chunk options)
 
 ```{r, fig.height=5, fig.width=7}
 p + theme_carly_presents()
